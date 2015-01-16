@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `words_all`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `words_all` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` int(11) NOT NULL,
   `DK` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `EN` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
@@ -33,8 +33,8 @@ CREATE TABLE `words_all` (
   `TSDK` date DEFAULT NULL,
   `TSPL` date DEFAULT NULL,
   `TSES` date DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  UNIQUE KEY `ID_UNIQUE` (`ID`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `ID_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5093 DEFAULT CHARSET=utf8 COLLATE=utf8_polish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

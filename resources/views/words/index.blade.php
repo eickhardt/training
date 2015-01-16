@@ -47,8 +47,8 @@
 							</thead>
 							<tbody class="list">
 								@foreach ($words as $word)
-									<tr onclick="document.location = '{{ route('word_path', $word->ID) }}'">
-										<td class="clickable ID">{{ $word->ID }}</td>
+									<tr onclick="document.location = '{{ route('word_path', $word->id) }}'">
+										<td class="clickable id">{{ $word->id }}</td>
 										<td class="clickable type">{{ $word->type }}</td>
 										<td class="clickable FR">{{ $word->FR }}</td>
 										<td class="clickable EN">{{ $word->EN }}</td>
@@ -79,7 +79,7 @@
 	$(function() {
 	    // console.log( "ready!" );
 		var options = {
-		  valueNames: [ 'DK', 'FR', 'EN', 'PL', 'ES', 'type', 'ID' ],
+		  valueNames: [ 'DK', 'FR', 'EN', 'PL', 'ES', 'type', 'id' ],
 		  page: 200,
 		  plugins: [ ListPagination([]) ]
 		};

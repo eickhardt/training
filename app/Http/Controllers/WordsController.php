@@ -61,6 +61,8 @@ class WordsController extends Controller {
 		// If a word is emtpy in DK PL or ES and is now being set, also set corresponding date
 		$fields = ['DK', 'ES', 'PL'];
 
+		$word = Word::where('id', $word->id)->first();
+
 		foreach ($fields as $field) 
 		{
 			if ($word->$field == NULL)
@@ -80,11 +82,11 @@ class WordsController extends Controller {
 		$word->FR = \Request::get('FR');
 		$word->EN = \Request::get('EN');
 		$word->type = \Request::get('type');
-		$word->save();
+		$word->update();
 
 		// dd($word);
 
-		return redirect('words/'.$word->ID);
+		return redirect(route('word_path', $word->id));
 	}
 
 	/**
@@ -124,7 +126,7 @@ class WordsController extends Controller {
 		$word->save();
 		// dd($word);
 
-		return redirect('words/'.$word->ID);
+		return redirect('words/'.$word->id);
 	}
 
 	/**
@@ -132,7 +134,9 @@ class WordsController extends Controller {
 	 */
 	public function destroy(Word $word)
 	{
-		Word::destroy($word->ID);
+		// Word::destroy($word->id);
+		$word = Word::where('id', $word->id)->first();
+		$word->delete();
 
 		return redirect('words');
 	}

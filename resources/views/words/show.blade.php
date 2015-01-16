@@ -30,7 +30,7 @@
 									</tr>
 								</thead>
 								<tr>
-									<td>{{ $word->ID }}</td>
+									<td>{{ $word->id }}</td>
 									<td>{{ $word->type }}</td>
 									<td>{{ $word->FR }}</td>
 									<td>{{ $word->EN }}</td>
@@ -44,15 +44,15 @@
 							</table>
 						</div>
 					</div>
-					<button onclick="document.location='{{ route('word_edit_path', $word->ID) }}'" type="submit" class="btn btn-primary">
+					<button onclick="document.location='{{ route('word_edit_path', $word->id) }}'" type="submit" class="btn btn-primary">
 						~ Edit
 					</button>
-					{!! Form::open(['url' => route('word_delete_path', $word->ID), 'method' => 'DELETE', 'class' => 'inline']) !!}
+					{!! Form::open(['url' => route('word_delete_path', $word->id), 'method' => 'DELETE', 'class' => 'inline']) !!}
 						<button type="submit" class="btn btn-primary">
 							- Delete
 						</button>
 					{!! Form::close() !!}
-					<?php /*<a href="/words/{{ $word->ID }}/edit">Edit</a> / <a href="/words/{{ $word->ID }}/delete">Delete</a> </b>*/ ?>
+					<?php /*<a href="/words/{{ $word->id }}/edit">Edit</a> / <a href="/words/{{ $word->id }}/delete">Delete</a> </b>*/ ?>
 				</div>
 			</div>
 		</div>

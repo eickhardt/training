@@ -12,7 +12,7 @@
 				</div>
 
 				<div class="panel-body">
-					{!! Form::model($word, ['url' => route('word_update_path', $word->ID), 'method' => 'PATCH', 'class' => 'form-horizontal']) !!}
+					{!! Form::model($word, ['url' => route('word_update_path', $word->id), 'method' => 'PATCH', 'class' => 'form-horizontal']) !!}
 						<?php /*<div class="form-group">
 							<label class="col-md-4 control-label">Type</label>
 							<div class="col-md-6">
@@ -96,7 +96,7 @@
 						</div>
 					{!! Form::close() !!}
 
-					<button onclick="document.location='{{ route('word_path', $word->ID) }}'" type="submit" class="btn btn-primary">
+					<button onclick="document.location='{{ route('word_path', $word->id) }}'" type="submit" class="btn btn-primary">
 						< Back to word
 					</button>
 				</div>
