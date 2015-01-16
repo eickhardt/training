@@ -26,20 +26,15 @@
 			}
 
 			.title {
-				font-size: 96px;
+				font-size: 72px;
 				margin-bottom: 40px;
-			}
-
-			.quote {
-				font-size: 24px;
 			}
 		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title"><a style="text-decoration: none; color: #B0BEC5;" href="/home">Daniel Eickhardt</a></div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<div class="title">404 Not Found.</div>
 			</div>
 		</div>
 	</body>

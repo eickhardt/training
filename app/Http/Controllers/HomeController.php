@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Word;
+
 class HomeController extends Controller {
 
 	/*
@@ -20,7 +22,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth');
+		// $this->middleware('auth');
 	}
 
 	/**
@@ -28,9 +30,10 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index(Word $word)
 	{
-		return view('home');
+		$wordcount = $word->count();
+		return view('home', compact('wordcount'));
 	}
 
 }

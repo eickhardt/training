@@ -4,14 +4,17 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Laravel</title>
+	<link rel="shortcut icon" href="http://faviconist.com/icons/f0d2338dfcaea0727d4bee45d0fadcf2/favicon.ico" />
+	<title>Training</title>
 
 	<!-- Bootstrap -->
 	<link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/app.css" rel="stylesheet">
+	<link href="/css/custom.css" rel="stylesheet">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href='/css/jquery-ui.css' rel='stylesheet' type='text/css'>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,18 +33,21 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Laravel</a>
+				<a class="navbar-brand" href="/">Training</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/">Home</a></li>
+					<li><a href="/home">Home</a></li>
+					@unless (Auth::guest()) 
+						<li><a href="/words">Words</a></li>
+					@endunless
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="/auth/login">Login</a></li>
-						<li><a href="/auth/register">Register</a></li>
+						<!-- <li><a href="/auth/register">Register</a></li> -->
 					@else
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
@@ -59,6 +65,10 @@
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="/js/jquery-ui.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+	@yield('scripts')
+
 </body>
 </html>
