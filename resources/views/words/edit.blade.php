@@ -7,7 +7,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2>
-						{!! link_to_route('words_path', 'Words') !!} / Edit word: <b>{{ $word->FR }}</b>
+						{!! link_to_route('words_path', 'Words') !!} / Edit word: <b>{{ $word->FR }}</b> (FR)
 					</h2>
 				</div>
 
