@@ -82,7 +82,7 @@ class WordsController extends Controller {
 		$word->type = \Request::get('type');
 		$word->save();
 
-		dd($word);
+		// dd($word);
 
 		return redirect('words/'.$word->ID);
 	}

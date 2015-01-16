@@ -69,21 +69,21 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Time DK</label>
 							<div class="col-md-6">
-								{!! Form::text('TSDK', NULL, ['class' => 'form-control datepicker', 'disabled' => 'disabled']) !!}
+								{!! Form::text('TSDK', NULL, ['class' => 'form-control datepicker', 'placeholder' => 'Automatically set', 'disabled' => 'disabled']) !!}
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Time PL</label>
 							<div class="col-md-6">
-								{!! Form::text('TSPL', NULL, ['class' => 'form-control datepicker', 'disabled' => 'disabled']) !!}
+								{!! Form::text('TSPL', NULL, ['class' => 'form-control datepicker', 'placeholder' => 'Automatically set', 'disabled' => 'disabled']) !!}
 							</div>
 						</div>
 
 						<div class="form-group">
 							<label class="col-md-4 control-label">Time ES</label>
 							<div class="col-md-6">
-								{!! Form::text('TSES', NULL, ['class' => 'form-control datepicker', 'disabled' => 'disabled']) !!}
+								{!! Form::text('TSES', NULL, ['class' => 'form-control datepicker', 'placeholder' => 'Automatically set', 'disabled' => 'disabled']) !!}
 							</div>
 						</div>
 
