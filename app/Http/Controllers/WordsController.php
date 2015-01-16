@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Word;
+use Session;
 
 class WordsController extends Controller {
 
@@ -85,7 +86,7 @@ class WordsController extends Controller {
 		$word->update();
 
 		// dd($word);
-
+		Session::flash('success', "The word '".$word->FR."' was updated.");
 		return redirect(route('word_path', $word->id));
 	}
 
@@ -102,7 +103,7 @@ class WordsController extends Controller {
 	 */
 	public function store()
 	{
-		// TODO: Validate!
+		// TODO: Validate.
 
 		// Create word
 		$word = new Word;
@@ -124,8 +125,8 @@ class WordsController extends Controller {
 			}
 		}
 		$word->save();
-		// dd($word);
 
+		Session::flash('success', "A new word '".$word->FR."' was created.");
 		return redirect('words/'.$word->id);
 	}
 
@@ -134,10 +135,10 @@ class WordsController extends Controller {
 	 */
 	public function destroy(Word $word)
 	{
-		// Word::destroy($word->id);
-		$word = Word::where('id', $word->id)->first();
+		$oldword = $word->FR;
 		$word->delete();
 
+		Session::flash('success', 'The word ' .$oldword. ' was deleted.');
 		return redirect('words');
 	}
 

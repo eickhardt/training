@@ -61,6 +61,21 @@
 		</div>
 	</nav>
 
+	<!-- Alerts -->
+	@if (Session::has('success'))
+		<div class="container alert-container" style="display: none;">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1">
+						
+					<div class="alert alert-success">
+						<strong>Viola!</strong> - {{ Session::get('success') }} <br>
+					</div>
+						
+				</div>
+			</div>
+		</div>
+	@endif
+
 	@yield('content')
 
 	<!-- Scripts -->
@@ -69,6 +84,15 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 	@yield('scripts')
+
+	<script type="text/javascript">
+		$(function() {
+			$('.alert-container').slideDown();
+			$('.alert-container').on('click', function() {
+				$(this).slideUp();
+			})
+		});
+	</script>
 
 </body>
 </html>
