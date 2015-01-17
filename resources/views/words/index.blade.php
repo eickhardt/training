@@ -38,11 +38,11 @@
 								<tr class="info">
 									<th>Row</th>
 									<th>Type</th>
-									<th>French</th>
+									<th>Danish</th>
 									<th>English</th>
+									<th>French</th>
 									<th>Polish</th>
 									<th>Spanish</th>
-									<th>Danish</th>
 								</tr>
 							</thead>
 							<tbody class="list">
@@ -50,18 +50,15 @@
 									<tr onclick="document.location = '{{ route('word_path', $word->id) }}'">
 										<td class="clickable id">{{ $word->id }}</td>
 										<td class="clickable type">{{ $word->type }}</td>
-										<td class="clickable FR">{{ $word->FR }}</td>
+										<td title="{{ $word->TSDK }}" class="clickable DK">{{ $word->DK }}</td>
 										<td class="clickable EN">{{ $word->EN }}</td>
-										<td class="clickable PL">{{ $word->PL }}</td>
-										<td class="clickable ES">{{ $word->ES }}</td>
-										<td class="clickable DK">{{ $word->DK }}</td>
+										<td class="clickable FR">{{ $word->FR }}</td>
+										<td title="{{ $word->TSPL }}" class="clickable PL">{{ $word->PL }}</td>
+										<td title="{{ $word->TSES }}" class="clickable ES">{{ $word->ES }}</td>
 									</tr>
 								@endforeach
-
 							</tbody>
-
 						</table>
-
 					</div>
 					<ul class="pagination"></ul>
 				</div>
